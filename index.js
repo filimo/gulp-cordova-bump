@@ -11,7 +11,7 @@
 'use strict';
 
 var vfs = require('vinyl-fs');
-var args = require("yargs").argv;
+var argv = require("yargs").argv;
 var fs = require("fs");
 var semver = require('semver');
 var gutil = require('gutil');
@@ -24,6 +24,7 @@ var $ = require('gulp-load-plugins')();
 function Bump() {}
 
 Bump.prototype.run = function(args) {
+  args = args || argv
   if (args.packagejson){
     this.packagejson = args.packagejson;
   } else {
