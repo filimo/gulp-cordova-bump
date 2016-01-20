@@ -23,7 +23,7 @@ var $ = require('gulp-load-plugins')();
 
 function Bump() {}
 
-Bump.prototype.run = function() {
+Bump.prototype.run = function(args) {
   if (args.packagejson){
     this.packagejson = args.packagejson;
   } else {
@@ -114,4 +114,4 @@ Bump.prototype.help = function() {
 */
 
 var init = new Bump();
-module.exports = function () { return init.run(); };
+module.exports = function (args) { return init.run(args); };
